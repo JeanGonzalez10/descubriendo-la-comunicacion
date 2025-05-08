@@ -1,7 +1,12 @@
-import { useTheme } from "@/hooks/useTheme";
 import { TeamMember } from "@/types/teamMember";
 
-const { colors } = useTheme();
+// Definimos los colores directamente para evitar usar el hook fuera de un componente
+const colors = {
+	CRC_green: "#4CAF50",
+	CED_red: "#E57373",
+	CLA_blue: "#2196F3",
+	CGP_yellow: "#FFC107",
+};
 
 export const teamMembers: TeamMember[] = [
 	{
