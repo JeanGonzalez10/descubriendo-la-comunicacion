@@ -14,17 +14,16 @@ const sectionLinks = {
 
 export function CircleWheel() {
 	const [activeSection, setActiveSection] = useState<SectionId | null>(null);
-
 	const getContentPosition = (id: SectionId) => {
 		switch (id) {
 			case "CRC":
-				return "-top-[-130px] -left-[-30px]";
+				return "sm:-top-[-150px] sm:-left-[-50px] -top-[-150px] left-[50%] -translate-x-1/2";
 			case "CED":
-				return "-top-[-130px] -right-[-30px]";
+				return "sm:-top-[-150px] sm:-left-[-120px] -top-[-150px] left-[50%] -translate-x-1/2";
 			case "CGP":
-				return "-bottom-[-150px] -right-[-30px]";
+				return "sm:-bottom-[-150px] sm:-left-[-120px] -bottom-[-150px] left-[50%] -translate-x-1/2";
 			case "CLA":
-				return "-bottom-[-150px] -left-[-30px]";
+				return "sm:-bottom-[-150px] sm:-left-[-50px] -bottom-[-150px] left-[50%] -translate-x-1/2";
 			default:
 				return "";
 		}
@@ -34,29 +33,24 @@ export function CircleWheel() {
 		switch (id) {
 			case "CED":
 				return (
-					<div className="flex flex-col gap-6">
+					<div className="flex flex-col gap-2 sm:gap-3">
 						<motion.p
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -10 }}
 							transition={{ duration: 0.3, delay: 0.1 }}
-							className="text-white/90 text-center leading-relaxed">
-							¿Te encanta crear contenido, explorar plataformas digitales y
-							conectar con las audiencias a través del entretenimiento?
+							className="text-white/90 text-center text-xs sm:text-sm leading-tight sm:leading-snug">
+							¿Te encanta crear contenido digital y conectar con audiencias?
 						</motion.p>
 						<motion.p
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -10 }}
 							transition={{ duration: 0.3, delay: 0.2 }}
-							className="text-white/90 text-center leading-relaxed">
-							Entonces la carrera de{" "}
+							className="text-white/90 text-center text-xs sm:text-sm leading-tight sm:leading-snug">
+							La carrera de{" "}
 							<span className="text-yellow-400 font-semibold">
 								Comunicación y Entretenimiento Digital
-							</span>{" "}
-							en la{" "}
-							<span className="text-yellow-400 font-semibold">
-								Universidad de Medellín
 							</span>{" "}
 							es perfecta para ti.
 						</motion.p>
@@ -69,17 +63,12 @@ export function CircleWheel() {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -10 }}
 						transition={{ duration: 0.3 }}
-						className="flex flex-col text-center gap-6">
-						<p className="text-white/90 leading-relaxed">
-							Si te interesa liderar procesos de comunicación estratégica,
-							construir reputación y conectar con diferentes públicos, la
-							carrera de{" "}
+						className="flex flex-col text-center gap-2 sm:gap-3">
+						<p className="text-white/90 text-xs sm:text-sm leading-tight sm:leading-snug">
+							Si te interesa liderar procesos de comunicación estratégica y
+							construir reputación, la carrera de{" "}
 							<span className="text-yellow-400 font-semibold">
 								Comunicación y Relaciones Corporativas
-							</span>{" "}
-							en la{" "}
-							<span className="text-yellow-400 font-semibold">
-								Universidad de Medellín
 							</span>{" "}
 							es tu camino.
 						</p>
@@ -92,16 +81,12 @@ export function CircleWheel() {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -10 }}
 						transition={{ duration: 0.3 }}
-						className="flex flex-col gap-6">
-						<p className="text-white/90 text-center leading-relaxed">
-							Si sueñas con contar historias a través del cine, la fotografía,
-							el sonido o la producción audiovisual, la carrera de{" "}
+						className="flex flex-col gap-2 sm:gap-3">
+						<p className="text-white/90 text-center text-xs sm:text-sm leading-tight sm:leading-snug">
+							Si sueñas con contar historias a través del cine, la fotografía o
+							la producción audiovisual, la carrera de{" "}
 							<span className="text-yellow-400 font-semibold">
 								Comunicación y Lenguajes Audiovisuales
-							</span>{" "}
-							en la{" "}
-							<span className="text-yellow-400 font-semibold">
-								Universidad de Medellín
 							</span>{" "}
 							es tu espacio creativo.
 						</p>
@@ -109,29 +94,25 @@ export function CircleWheel() {
 				);
 			case "CGP":
 				return (
-					<div className="flex flex-col gap-6">
+					<div className="flex flex-col gap-2 sm:gap-3">
 						<motion.p
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -10 }}
 							transition={{ duration: 0.3, delay: 0.1 }}
-							className="text-white/90 text-center leading-relaxed">
-							¿Te apasiona el diseño, los colores y la forma en que una imagen
-							puede transformar un mensaje?
+							className="text-white/90 text-center text-xs sm:text-sm leading-tight sm:leading-snug">
+							¿Te apasiona el diseño y la forma en que una imagen transforma un
+							mensaje?
 						</motion.p>
 						<motion.p
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -10 }}
 							transition={{ duration: 0.3, delay: 0.2 }}
-							className="text-white/90 text-center leading-relaxed">
-							Entonces la carrera de{" "}
+							className="text-white/90 text-center text-xs sm:text-sm leading-tight sm:leading-snug">
+							La carrera de{" "}
 							<span className="text-yellow-400 font-semibold">
 								Comunicación Gráfica Publicitaria
-							</span>{" "}
-							en la{" "}
-							<span className="text-yellow-400 font-semibold">
-								Universidad de Medellín
 							</span>{" "}
 							es para ti.
 						</motion.p>
@@ -145,12 +126,11 @@ export function CircleWheel() {
 	const handleClick = (id: SectionId) => {
 		window.open(sectionLinks[id], "_blank", "noopener,noreferrer");
 	};
-
 	return (
-		<div className="relative w-[800px] h-[800px]">
+		<div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]">
 			<div className="absolute inset-0 rounded-full overflow-hidden">
 				{/* Escudo central */}
-				<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-[200px] h-[200px]">
+				<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] md:w-[160px] md:h-[160px] lg:w-[200px] lg:h-[200px]">
 					<Image
 						src={
 							activeSection
@@ -227,9 +207,10 @@ export function CircleWheel() {
 										className={`absolute z-30 ${getContentPosition(
 											id as SectionId
 										)}`}>
-										<div className="w-[250px]">
-											<div className="bg-black/30 backdrop-blur-md rounded-2xl border shadow-2xl">
-												<div className="p-8">
+										{" "}
+										<div className="w-[220px] sm:w-[200px] md:w-[220px]">
+											<div className="bg-black/60 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl">
+												<div className="p-3 sm:p-4 md:p-5">
 													{renderDescription(id as SectionId)}
 												</div>
 											</div>

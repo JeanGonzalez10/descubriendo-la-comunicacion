@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+	weight: ["300", "400", "500", "600", "700", "800", "900"],
+	subsets: ["latin"],
+	display: "swap",
+});
 
 export const metadata: Metadata = {
 	title: "Comunicación Social",
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="es">
-			<body className={`${inter.className} min-h-screen`}>{children}</body>
+			<body className={`${poppins.className} min-h-screen`}>{children}</body>
 		</html>
 	);
 }
