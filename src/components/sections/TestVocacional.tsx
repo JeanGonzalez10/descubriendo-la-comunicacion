@@ -8,9 +8,8 @@ import { useRouter } from "next/navigation";
 export function TestVocacional() {
 	const { colors } = useTheme();
 	const router = useRouter();
-
 	const handleTestClick = () => {
-		router.push("/cuestionario");
+		router.push("/testvocacional");
 	};
 	return (
 		<div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6">

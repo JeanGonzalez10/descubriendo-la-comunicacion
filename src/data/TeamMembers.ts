@@ -1,6 +1,5 @@
 import { TeamMember } from "@/types/teamMember";
 
-// Definimos los colores directamente para evitar usar el hook fuera de un componente
 const colors = {
 	CRC_green: "#4CAF50",
 	CED_red: "#E57373",

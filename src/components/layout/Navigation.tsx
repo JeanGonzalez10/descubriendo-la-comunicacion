@@ -3,16 +3,21 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const pathname = usePathname();
 
 	const navItems = [
 		{ href: "/", text: "INICIO" },
 		{ href: "/entrevistas", text: "ENTREVISTAS" },
-		{ href: "/cuestionario", text: "TEST VOCACIONAL" },
-		{ href: "/retroalimentacion", text: "RETROALIMENTACIÓN" },
+		{ href: "/testvocacional", text: "TEST VOCACIONAL" },
+		{
+			href: "https://docs.google.com/forms/d/e/1FAIpQLSfTnW_HtzQGvc3UPE5QWuFn8hKxI5cMJ5M1hP608YalT9acfA/viewform?usp=header",
+			text: "EVALÚA LA EXPERIENCIA",
+		},
 	];
 
 	// Controla el estado de mobile en base a la anchura de la pantalla
@@ -21,10 +26,10 @@ export function Navigation() {
 			setIsMobile(window.innerWidth < 768);
 		};
 
-		// Comprueba al montar el componente
+		// Compruebar si es móvil al cargar
 		checkIfMobile();
 
-		// Añade listener para redimensionamiento
+		// listener para redimensionamiento
 		window.addEventListener("resize", checkIfMobile);
 
 		// Limpia el listener al desmontar
@@ -76,7 +81,7 @@ export function Navigation() {
 						</div>
 					)}
 
-					{/* Para desktop: menú centrado */}
+					{/* Para desktop */}
 					{!isMobile && (
 						<div className="flex justify-center items-center h-16 md:h-20 w-full">
 							<div className="flex overflow-x-auto scrollbar-hide">
@@ -89,8 +94,29 @@ export function Navigation() {
 											className="cursor-pointer flex-shrink-0">
 											<Link
 												href={item.href}
-												className="text-gray-300 hover:text-white transition-colors text-sm md:text-base font-medium tracking-wider whitespace-nowrap">
-												{item.text}
+												className={`transition-all duration-300 text-sm md:text-base font-medium tracking-wider whitespace-nowrap ${
+													pathname === item.href ||
+													(pathname.startsWith("/testvocacional") &&
+														item.href === "/testvocacional")
+														? "text-amber-400 font-bold"
+														: "text-gray-300 hover:text-white"
+												}`}
+												target={
+													item.href.startsWith("http") ? "_blank" : undefined
+												}
+												rel={
+													item.href.startsWith("http")
+														? "noopener noreferrer"
+														: undefined
+												}>
+												<div className="relative">
+													{item.text}
+													{(pathname === item.href ||
+														(pathname.startsWith("/testvocacional") &&
+															item.href === "/testvocacional")) && (
+														<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400 rounded-full"></span>
+													)}
+												</div>
 											</Link>
 										</motion.li>
 									))}
@@ -120,9 +146,30 @@ export function Navigation() {
 										className="cursor-pointer">
 										<Link
 											href={item.href}
-											className="block text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wider py-2"
-											onClick={() => setIsOpen(false)}>
-											{item.text}
+											className={`block text-sm font-medium tracking-wider py-2 ${
+												pathname === item.href ||
+												(pathname.startsWith("/testvocacional") &&
+													item.href === "/testvocacional")
+													? "text-amber-400 font-bold"
+													: "text-gray-300 hover:text-white transition-colors"
+											}`}
+											onClick={() => setIsOpen(false)}
+											target={
+												item.href.startsWith("http") ? "_blank" : undefined
+											}
+											rel={
+												item.href.startsWith("http")
+													? "noopener noreferrer"
+													: undefined
+											}>
+											<div className="relative">
+												{item.text}
+												{(pathname === item.href ||
+													(pathname.startsWith("/testvocacional") &&
+														item.href === "/testvocacional")) && (
+													<span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400 rounded-full"></span>
+												)}
+											</div>
 										</Link>
 									</motion.li>
 								))}
