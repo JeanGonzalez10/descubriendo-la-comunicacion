@@ -6,6 +6,7 @@ import { CircleWheel } from "@/components/sections/CircleWheel";
 import { Introduction } from "@/components/sections/Introduction";
 import { TeamPresentation } from "@/components/sections/TeamPresentation";
 import { TestVocacional } from "@/components/sections/TestVocacional";
+import { EntrevistaEstudiantes } from "@/components/sections/EntrevistaEstudiantes";
 
 export default function Home() {
 	return (
@@ -42,6 +43,12 @@ export default function Home() {
 				{/* Test vocacional */}
 				<section className="w-full flex items-center justify-center py-5 sm:py-6 md:py-8 lg:py-10 mb-3 sm:mb-4 md:mb-6 lg:mb-8">
 					<TestVocacional />
+				</section>
+				{/* Separador con gradiente */}
+				<div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-3 sm:my-4 md:my-5 lg:my-6" />
+				{/* Entrevistas a Estudiantes */}
+				<section className="w-full flex items-center justify-center py-5 sm:py-6 md:py-8 lg:py-10">
+					<EntrevistaEstudiantes />
 				</section>
 			</main>
 		</div>

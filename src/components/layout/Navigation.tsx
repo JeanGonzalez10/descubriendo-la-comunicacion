@@ -12,7 +12,7 @@ export function Navigation() {
 
 	const navItems = [
 		{ href: "/", text: "INICIO" },
-		{ href: "/entrevistas", text: "ENTREVISTAS" },
+		{ href: "/que-es-la-comunicacion", text: "¿QUÉ ES LA COMUNICACIÓN?" },
 		{ href: "/testvocacional", text: "TEST VOCACIONAL" },
 		{
 			href: "https://docs.google.com/forms/d/e/1FAIpQLSfTnW_HtzQGvc3UPE5QWuFn8hKxI5cMJ5M1hP608YalT9acfA/viewform?usp=header",

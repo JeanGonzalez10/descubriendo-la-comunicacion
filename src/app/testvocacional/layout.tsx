@@ -14,9 +14,9 @@ export default function TestVocacionalLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div className="min-h-screen bg-gradient-to-bl from-black via-purple-950/10 to-black">
+		<div className="min-h-screen bg-gradient-to-bl from-black via-purple-950/10 to-black flex flex-col">
 			<Navigation />
-			<div>{children}</div>
+			<div className="flex-grow">{children}</div>
 		</div>
 	);
 }
