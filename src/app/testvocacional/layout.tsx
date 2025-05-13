@@ -15,7 +15,9 @@ export default function TestVocacionalLayout({
 }>) {
 	return (
 		<div className="min-h-screen bg-gradient-to-bl from-black via-purple-950/10 to-black flex flex-col">
-			<Navigation />
+			<header className="w-full z-50 sticky top-0 bg-black/20 backdrop-blur-sm">
+				<Navigation />
+			</header>
 			<div className="flex-grow">{children}</div>
 		</div>
 	);
