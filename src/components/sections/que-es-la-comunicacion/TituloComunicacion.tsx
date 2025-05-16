@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { containerVariants, hogwartsColors } from "./utilsComunicacion";
+import { containerVariants, Colors } from "./utilsComunicacion";
+import { GeometricBackground } from "@/components/UI";
 
 export function TituloComunicacion() {
 	return (
@@ -9,85 +10,117 @@ export function TituloComunicacion() {
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
-			className="text-center mb-10 sm:mb-12 md:mb-16">
-			{/* Iconos de Harry Potter para decoración */}
+			className="text-center mb-10 sm:mb-12 md:mb-16 relative">
+			{/* Elementos decorativos */}
 			<motion.div
-				className="relative w-full h-12 md:h-16 mb-2 overflow-hidden opacity-20"
+				className="relative w-full h-12 md:h-16 mb-2 overflow-hidden"
 				initial={{ opacity: 0 }}
-				animate={{ opacity: 0.2 }}
+				animate={{ opacity: 1 }}
 				transition={{ duration: 1.2, delay: 0.2 }}>
+				<GeometricBackground
+					showStars={false}
+					showPattern={false}
+					elements={[
+						{
+							size: "8px",
+							gradient: Colors.gradients.blue,
+							position:
+								"top: 50%; left: 5%; transform: translateY(-50%); borderRadius: 9999px; opacity: 0.2",
+						},
+						{
+							size: "6px",
+							gradient: Colors.accent.purple,
+							position:
+								"top: 50%; left: 20%; transform: translateY(-50%) rotate(45deg); opacity: 0.2",
+						},
+						{
+							size: "10px",
+							gradient: Colors.accent.green,
+							position:
+								"top: 50%; left: 35%; height: 4px; transform: translateY(-50%); borderRadius: 9999px; opacity: 0.2",
+						},
+						{
+							size: "10px",
+							gradient: Colors.accent.green,
+							position:
+								"top: 50%; right: 35%; height: 4px; transform: translateY(-50%); borderRadius: 9999px; opacity: 0.2",
+						},
+						{
+							size: "6px",
+							gradient: Colors.accent.purple,
+							position:
+								"top: 50%; right: 20%; transform: translateY(-50%) rotate(45deg); opacity: 0.2",
+						},
+						{
+							size: "8px",
+							gradient: Colors.gradients.pink,
+							position:
+								"top: 50%; right: 5%; transform: translateY(-50%); borderRadius: 9999px; opacity: 0.2",
+						},
+					]}
+				/>
+
+				{/* Línea decorativa */}
+				<div
+					className="absolute top-1/2 left-0 w-full h-[1px] -translate-y-1/2 opacity-30"
+					style={{
+						background: `linear-gradient(90deg, transparent, ${Colors.primary.main}, transparent)`,
+					}}></div>
+
+				{/* Iconos de comunicación */}
 				<div className="absolute top-1/2 left-[15%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
 					<svg
-						viewBox="0 0 512 512"
+						viewBox="0 0 24 24"
 						fill="currentColor"
-						className="text-gray-400">
-						<path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+						className="text-gray-400 opacity-40">
+						<path d="M8.465 11.293c1.133-1.133 3.109-1.133 4.242 0l.707.707 1.414-1.414-.707-.707c-.943-.944-2.199-1.465-3.535-1.465s-2.592.521-3.535 1.465L4.929 12a5.008 5.008 0 0 0 0 7.071 4.983 4.983 0 0 0 3.535 1.462A4.982 4.982 0 0 0 12 19.071l.707-.707-1.414-1.414-.707.707a3.007 3.007 0 0 1-4.243 0 3.005 3.005 0 0 1 0-4.243l2.122-2.121z"></path>
+						<path d="m12 4.929-.707.707 1.414 1.414.707-.707a3.007 3.007 0 0 1 4.243 0 3.005 3.005 0 0 1 0 4.243l-2.122 2.121c-1.133 1.133-3.109 1.133-4.242 0L10.586 12l-1.414 1.414.707.707c.943.944 2.199 1.465 3.535 1.465s2.592-.521 3.535-1.465L19.071 12a5.008 5.008 0 0 0 0-7.071 5.006 5.006 0 0 0-7.071 0z"></path>
 					</svg>
 				</div>
-				<div className="absolute top-1/2 left-[30%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
+				<div className="absolute top-1/2 left-[28%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
 					<svg
-						viewBox="0 0 384 512"
+						viewBox="0 0 24 24"
 						fill="currentColor"
-						className="text-gray-400">
-						<path d="M368 32h-56c-8.8 0-16 7.2-16 16v48h-48V48c0-8.8-7.2-16-16-16h-80c-8.8 0-16 7.2-16 16v48H88.1V48c0-8.8-7.2-16-16-16H16C7.2 32 0 39.2 0 48v416c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16zm-16 416H32V96h48v48c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V96h32v48c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V96h48v352z" />
+						className="text-gray-400 opacity-40">
+						<path d="M20 2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3v3.767L13.277 18H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14h-7.277L9 18.233V16H4V4h16v12z"></path>
+						<path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
 					</svg>
 				</div>
-				<div className="absolute top-1/2 right-[30%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
+				<div className="absolute top-1/2 right-[28%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
 					<svg
-						viewBox="0 0 512 512"
+						viewBox="0 0 24 24"
 						fill="currentColor"
-						className="text-gray-400">
-						<path d="M176 216h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16zm-16 80c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16zm96 121.13c-16.42 0-32.84-5.06-46.86-15.19L0 250.86V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V250.86L302.86 401.94c-14.02 10.12-30.44 15.19-46.86 15.19zm237.61-254.18c-8.85-6.94-17.24-13.47-29.61-22.81V96c0-26.51-21.49-48-48-48h-77.55c-3.04-2.2-5.87-4.26-9.04-6.56C312.6 29.17 279.2-.35 256 0c-23.2-.35-56.59 29.17-73.41 41.44-3.17 2.3-6 4.36-9.04 6.56H96c-26.51 0-48 21.49-48 48v44.14c-12.37 9.33-20.76 15.87-29.61 22.81A47.995 47.995 0 0 0 0 200.72v10.65l96 69.35V96h320v184.72l96-69.35v-10.65c0-14.74-6.78-28.67-18.39-37.77z" />
+						className="text-gray-400 opacity-40">
+						<path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
+						<path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
 					</svg>
 				</div>
 				<div className="absolute top-1/2 right-[15%] w-8 h-8 md:w-10 md:h-10 -translate-y-1/2">
 					<svg
-						viewBox="0 0 512 512"
+						viewBox="0 0 24 24"
 						fill="currentColor"
-						className="text-gray-400">
-						<path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" />
+						className="text-gray-400 opacity-40">
+						<path d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z"></path>
 					</svg>
 				</div>
 			</motion.div>
 
-			<h1 className="flex flex-col gap-1 relative">
-				{" "}
+			<h1 className="text-[40px] sm:text-[65px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-black leading-[1.1] glow-text">
 				<motion.span
-					className="text-[35px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[65px] font-black leading-[1.1] font-serif"
-					style={{ color: hogwartsColors.gryffindor.primary }}
-					initial={{ opacity: 0, y: -20 }}
+					initial={{ opacity: 0, y: -50 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}>
-					¿QUÉ ES LA
-				</motion.span>{" "}
-				<motion.span
-					className="text-[30px] sm:text-[35px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-black leading-[1.1] font-serif"
-					style={{ color: hogwartsColors.gryffindor.secondary }}
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.4 }}>
-					COMUNICACIÓN?
+					transition={{ duration: 0.8, delay: 0.5 }}
+					className="block bg-clip-text bg-gradient-to-r from-[#00CFFF] via-[#2AFFA5] to-[#9B5DE5] text-transparent">
+					COMUNICACIÓN
 				</motion.span>
-				{/* Detalles decorativos mágicos */}
-				<motion.div
-					className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-24 h-24 opacity-70 hidden md:block"
-					initial={{ opacity: 0, y: -50, rotate: -10 }}
-					animate={{ opacity: 0.7, y: 0, rotate: 0 }}
-					transition={{ duration: 0.8, delay: 0.5 }}>
-					<div className="relative w-full h-full">
-						<div className="absolute inset-0 bg-gradient-to-br from-amber-400/30 to-transparent rounded-full blur-md"></div>
-						<div className="absolute inset-2 border-2 border-amber-500/30 rounded-full"></div>
-					</div>
-				</motion.div>
 			</h1>
-			{/* Lema de Hogwarts */}
 			<motion.p
-				className="text-xs sm:text-sm mt-4 opacity-60 italic font-serif"
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 0.6 }}
-				transition={{ duration: 1, delay: 1 }}
-				style={{ color: hogwartsColors.gryffindor.secondary }}>
-				Draco dormiens nunquam titillandus
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, delay: 0.7 }}
+				className="mt-3 md:mt-6 text-gray-200 max-w-3xl mx-auto text-base sm:text-lg md:text-xl">
+				Conoce el papel fundamental de la comunicación en la sociedad moderna y
+				su impacto en nuestras interacciones diarias.
 			</motion.p>
 		</motion.div>
 	);

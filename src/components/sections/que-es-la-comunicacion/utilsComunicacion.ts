@@ -1,22 +1,32 @@
 "use client";
 
-// Definiciones de colores de Hogwarts
-export const hogwartsColors = {
-	gryffindor: {
-		primary: "#740001",
-		secondary: "#D3A625",
+// Definiciones de colores para la sección de comunicación
+export const Colors = {
+	primary: {
+		main: "#00CFFF",
+		light: "#33D9FF",
+		dark: "#00A6CC",
 	},
-	hufflepuff: {
-		primary: "#ECB939",
-		secondary: "#372E29",
+	secondary: {
+		main: "#FF3D7F",
+		light: "#FF639B",
+		dark: "#CC3166",
 	},
-	ravenclaw: {
-		primary: "#0E1A40",
-		secondary: "#946B2D",
+	accent: {
+		orange: "#FF8C42",
+		green: "#2AFFA5",
+		purple: "#9B5DE5",
 	},
-	slytherin: {
-		primary: "#1A472A",
-		secondary: "#5D5D5D",
+	neutral: {
+		light: "#F5F5F5",
+		dark: "#1A1A1A",
+	},
+	gradients: {
+		blue: "linear-gradient(135deg, #00CFFF, #2AFFA5)",
+		pink: "linear-gradient(135deg, #FF3D7F, #9B5DE5)",
+		purple: "linear-gradient(135deg, #9B5DE5, #FF3D7F)",
+		green: "linear-gradient(135deg, #2AFFA5, #00CFFF)",
+		mixed: "linear-gradient(135deg, #00CFFF, #FF3D7F, #FF8C42)",
 	},
 };
 

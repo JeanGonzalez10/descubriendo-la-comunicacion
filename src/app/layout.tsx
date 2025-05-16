@@ -21,8 +21,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="es">
-			<body className={`${poppins.className} min-h-screen flex flex-col`}>
-				<div className="flex-grow">{children}</div>
+			<body
+				className={`${poppins.className} min-h-screen flex flex-col overflow-x-hidden`}>
+				<div className="creative-background fixed inset-0 w-full h-full -z-10"></div>
+				<div className="creative-overlay fixed inset-0 w-full h-full -z-10"></div>
+				<div className="flex-grow relative z-0">{children}</div>
 				<Footer />
 			</body>
 		</html>

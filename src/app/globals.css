@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.perspective-500 {
+		perspective: 500px;
+	}
+
+	.group-hover\:animate-shine {
+		animation: shine 1.5s infinite;
+	}
+
+	@keyframes shine {
+		from {
+			left: -100%;
+		}
+		to {
+			left: 200%;
+		}
+	}
+}
+
 :root {
 	--foreground-rgb: 255, 255, 255;
 	--background-start-rgb: 28, 28, 28;
@@ -35,6 +54,67 @@
 	}
 }
 
+@keyframes pulse-slow {
+	0% {
+		opacity: 0.4;
+		transform: scale(0.95);
+	}
+	50% {
+		opacity: 0.8;
+		transform: scale(1.05);
+	}
+	100% {
+		opacity: 0.4;
+		transform: scale(0.95);
+	}
+}
+
+/* Estilos específicos para EntrevistaEstudiantes */
+.video-frame-container {
+	transition: all 0.3s ease;
+	box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.video-frame-container:hover {
+	box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6),
+		0 0 15px rgba(0, 207, 255, 0.2);
+}
+
+/* Animación para los elementos brillantes */
+@keyframes glow {
+	0% {
+		opacity: 0.4;
+		filter: blur(8px);
+	}
+	50% {
+		opacity: 0.8;
+		filter: blur(12px);
+	}
+	100% {
+		opacity: 0.4;
+		filter: blur(8px);
+	}
+}
+
+.glow-effect {
+	animation: glow 3s infinite;
+}
+
+/* Animación de rebote pequeño para iconos */
+@keyframes bounce-small {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+.animate-bounce-small {
+	animation: bounce-small 1s ease-in-out infinite;
+}
+
 @keyframes sparkle {
 	0% {
 		opacity: 0.2;
@@ -50,6 +130,17 @@
 	}
 }
 
+/* Animación para el botón de las tarjetas de equipo */
+@keyframes bounce-small {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
 .animate-float {
 	animation: float 6s ease-in-out infinite;
 }
@@ -60,6 +151,72 @@
 
 .animate-sparkle {
 	animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-bounce-small {
+	animation: bounce-small 2s ease-in-out infinite;
+}
+
+/* Estilos para el componente TeamPresentation */
+.team-carousel .slick-dots {
+	bottom: -30px;
+}
+
+.team-carousel .slick-dots li button:before {
+	font-size: 10px;
+	color: rgba(245, 245, 245, 0.4);
+	opacity: 0.5;
+}
+
+.team-carousel .slick-dots li.slick-active button:before {
+	color: #ff3d7f;
+	opacity: 1;
+}
+
+.custom-arrow-next:before,
+.custom-arrow-prev:before {
+	font-size: 24px;
+	line-height: 1;
+	opacity: 0.9;
+}
+
+/* Efectos 3D para las tarjetas */
+.perspective-1000 {
+	perspective: 1000px;
+}
+
+.card-container {
+	transform-style: preserve-3d;
+	transform: translateZ(0);
+}
+
+.card-face {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.backface-hidden {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+/* Scroll personalizado para la descripción */
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
 }
 
 /* Estrellas mágicas de fondo */
@@ -133,7 +290,7 @@ body {
 
 /* Estilos personalizados para el carrusel */
 .team-carousel .slick-dots {
-	bottom: -25px;
+	bottom: -30px;
 	display: flex !important;
 	justify-content: center;
 	align-items: center;
@@ -155,14 +312,18 @@ body {
 	transform: translate(-50%, -50%);
 	opacity: 1;
 	transition: all 0.3s ease;
+	font-size: 10px;
+	color: rgba(245, 245, 245, 0.4);
+	opacity: 0.5;
 }
 
 .team-carousel .slick-dots li.slick-active button:before {
-	background-color: #ffc107;
+	background-color: #ff3d7f;
 	box-shadow: 0 0 12px 2px rgba(255, 193, 7, 0.6);
 	width: 12px;
 	height: 12px;
 	opacity: 1;
+	color: #ff3d7f;
 }
 
 .team-carousel .slick-track {
@@ -194,6 +355,9 @@ body {
 	font-size: 24px;
 	color: #ffc107;
 	opacity: 0.7;
+	font-size: 24px;
+	line-height: 1;
+	opacity: 0.9;
 }
 
 .team-carousel .slick-prev:hover:before,
@@ -315,4 +479,179 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/* Estilos para el fondo creativo */
+.creative-background {
+	background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+	overflow: hidden;
+}
+
+.creative-background::before {
+	content: "";
+	position: absolute;
+	width: 150%;
+	height: 150%;
+	left: -25%;
+	top: -25%;
+	background: radial-gradient(
+			circle at 20% 35%,
+			rgba(0, 207, 255, 0.15) 0%,
+			transparent 25%
+		),
+		radial-gradient(
+			circle at 75% 15%,
+			rgba(255, 61, 127, 0.15) 0%,
+			transparent 20%
+		),
+		radial-gradient(
+			circle at 85% 60%,
+			rgba(255, 140, 66, 0.15) 0%,
+			transparent 30%
+		),
+		radial-gradient(
+			circle at 40% 80%,
+			rgba(42, 255, 165, 0.15) 0%,
+			transparent 25%
+		),
+		radial-gradient(
+			circle at 10% 65%,
+			rgba(155, 93, 229, 0.15) 0%,
+			transparent 20%
+		);
+	animation: rotateBackground 60s linear infinite;
+	z-index: -1;
+}
+
+.creative-overlay {
+	opacity: 0.4;
+	background-image: linear-gradient(
+			45deg,
+			rgba(26, 26, 26, 0.5) 25%,
+			transparent 25%
+		),
+		linear-gradient(-45deg, rgba(26, 26, 26, 0.5) 25%, transparent 25%),
+		linear-gradient(45deg, transparent 75%, rgba(26, 26, 26, 0.5) 75%),
+		linear-gradient(-45deg, transparent 75%, rgba(26, 26, 26, 0.5) 75%);
+	background-size: 20px 20px;
+	z-index: -1;
+}
+
+/* Partículas flotantes */
+.creative-background::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(
+			circle at 20% 10%,
+			#00cfff 0%,
+			#00cfff 0.1%,
+			transparent 0.1%
+		),
+		radial-gradient(
+			circle at 60% 30%,
+			#ff3d7f 0%,
+			#ff3d7f 0.1%,
+			transparent 0.1%
+		),
+		radial-gradient(
+			circle at 85% 50%,
+			#ff8c42 0%,
+			#ff8c42 0.1%,
+			transparent 0.1%
+		),
+		radial-gradient(
+			circle at 25% 75%,
+			#2affa5 0%,
+			#2affa5 0.1%,
+			transparent 0.1%
+		),
+		radial-gradient(
+			circle at 50% 90%,
+			#9b5de5 0%,
+			#9b5de5 0.1%,
+			transparent 0.1%
+		),
+		radial-gradient(
+			circle at 80% 15%,
+			#00cfff 0%,
+			#00cfff 0.05%,
+			transparent 0.05%
+		),
+		radial-gradient(
+			circle at 40% 40%,
+			#ff3d7f 0%,
+			#ff3d7f 0.05%,
+			transparent 0.05%
+		),
+		radial-gradient(
+			circle at 10% 60%,
+			#ff8c42 0%,
+			#ff8c42 0.05%,
+			transparent 0.05%
+		),
+		radial-gradient(
+			circle at 75% 85%,
+			#2affa5 0%,
+			#2affa5 0.05%,
+			transparent 0.05%
+		),
+		radial-gradient(
+			circle at 35% 20%,
+			#9b5de5 0%,
+			#9b5de5 0.05%,
+			transparent 0.05%
+		);
+	filter: blur(1px);
+	opacity: 0.8;
+	animation: floatingParticles 30s ease-in-out infinite alternate;
+}
+
+/* Animación para rotación de fondo */
+@keyframes rotateBackground {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Animación para partículas flotantes */
+@keyframes floatingParticles {
+	0% {
+		transform: translateY(0) translateX(0) scale(1);
+		opacity: 0.8;
+	}
+	50% {
+		transform: translateY(10px) translateX(5px) scale(1.05);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(0) translateX(0) scale(1);
+		opacity: 0.8;
+	}
+}
+
+/* Lineas decorativas para el fondo */
+.decorative-lines {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+			90deg,
+			transparent 49.5%,
+			rgba(0, 207, 255, 0.3) 49.5%,
+			rgba(0, 207, 255, 0.3) 50.5%,
+			transparent 50.5%
+		),
+		linear-gradient(
+			0deg,
+			transparent 49.5%,
+			rgba(155, 93, 229, 0.3) 49.5%,
+			rgba(155, 93, 229, 0.3) 50.5%,
+			transparent 50.5%
+		);
+	background-size: 40px 40px;
+	opacity: 0.2;
+	z-index: -2;
 }

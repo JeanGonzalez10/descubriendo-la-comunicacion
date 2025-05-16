@@ -1,46 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { itemVariants, hogwartsColors } from "./utilsComunicacion";
+import { itemVariants, Colors } from "./utilsComunicacion";
+import { BorderDecorations } from "@/components/UI";
 
 export function CitaDecorada() {
 	return (
 		<motion.div
 			variants={itemVariants}
-			className="mt-12 text-center max-w-3xl mx-auto relative">
-			{/* Elemento decorativo de pergamino */}
-			<div className="absolute inset-0 -z-10 opacity-5 transform -skew-y-1">
-				<div
-					className="h-full w-full border-2 rounded-lg"
-					style={{ borderColor: hogwartsColors.gryffindor.secondary }}></div>
+			className="mt-12 text-center max-w-3xl mx-auto relative glass-card p-8">
+			{/* Elementos decorativos */}
+			<div className="absolute inset-0 -z-10 opacity-10 overflow-hidden rounded-lg">
+				<div className="geometric-pattern"></div>
 			</div>
 
-			{/* Pequeñas varitas decorativas */}
+			{/* Líneas decorativas */}
+			<BorderDecorations
+				topGradient={Colors.gradients.blue}
+				bottomGradient={Colors.gradients.pink}
+				opacity={0.8}
+			/>
+
+			{/* Círculos decorativos */}
 			<div
-				className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 opacity-30"
-				style={{
-					background: `linear-gradient(to right, transparent, ${hogwartsColors.gryffindor.secondary}, transparent)`,
-				}}></div>
+				className="absolute -top-4 -left-4 w-8 h-8 rounded-full"
+				style={{ background: Colors.gradients.blue, opacity: 0.6 }}></div>
 			<div
-				className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-1 opacity-30"
-				style={{
-					background: `linear-gradient(to right, transparent, ${hogwartsColors.gryffindor.secondary}, transparent)`,
-				}}></div>
+				className="absolute -bottom-4 -right-4 w-8 h-8 rounded-full"
+				style={{ background: Colors.gradients.pink, opacity: 0.6 }}></div>
 
 			<p
-				className="text-sm sm:text-base md:text-lg italic font-serif"
-				style={{ color: `${hogwartsColors.gryffindor.secondary}B3` }}>
+				className="text-sm sm:text-base md:text-lg italic font-light glow-text mb-3"
+				style={{ color: Colors.primary.main }}>
 				{" "}
-				{/* B3 = 70% opacity */}
-				&ldquo;La comunicación es como el encantamiento más poderoso, capaz de
-				transformar el entendimiento y crear puentes donde antes había
-				abismos.&rdquo;
+				&ldquo;La comunicación es una herramienta transformadora, capaz de
+				conectar ideas y crear puentes donde antes existían barreras.&rdquo;
 			</p>
 			<p
 				className="text-xs sm:text-sm mt-2"
-				style={{ color: `${hogwartsColors.gryffindor.secondary}80` }}>
+				style={{ color: Colors.accent.green }}>
 				{" "}
-				{/* 80 = 50% opacity */}- Manual de Hechizos Comunicativos, Vol. III
+				- Manual del Comunicador, Vol. III
 			</p>
 		</motion.div>
 	);

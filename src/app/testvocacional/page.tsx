@@ -3,10 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { quizQuestions, quizResults } from "@/data/QuizData";
-import { useTheme } from "@/hooks/useTheme";
 
 export default function TestVocacional() {
-	useTheme();
 	const [started, setStarted] = useState(false);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [answers, setAnswers] = useState<Record<string, number>>({
