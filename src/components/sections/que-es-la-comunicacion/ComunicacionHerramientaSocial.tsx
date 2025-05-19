@@ -59,7 +59,7 @@ export function ComunicacionHerramientaSocial() {
 								herramienta social
 							</span>{" "}
 							porque tiene el poder de influir en las actitudes y
-							comportamientos de las personas. El comunicado utiliza esta
+							comportamientos de las personas. El comunicador utiliza esta
 							herramienta para promover cambios dentro de la sociedad, denunciar
 							injusticias o resaltar problemas, e incluso impulsar movimientos
 							que favorezcan el bienestar común.
